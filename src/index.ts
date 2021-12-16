@@ -1,6 +1,6 @@
 /* eslint-disable no-return-assign */
 
-// Source: https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true
+// Source: https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true
 
 function diagonalDifference(arr: number[][]): number {
   // Write your code here
