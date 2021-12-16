@@ -1,17 +1,27 @@
 /* eslint-disable no-return-assign */
 
-// Source: https://www.hackerrank.com/challenges/simple-array-sum/problem?isFullScreen=true
+// Source: https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true
 
-function simpleArraySum(ar: Array<number>): number {
-  let suma = 0;
-  ar.forEach((element) => suma += element);
-  return suma;
+function compareTriplets(a: number[], b: number[]): number[] {
+  // Write your code here
+  let aPoints = 0;
+  let bPoints = 0;
+  for (let index = 0; index < a.length; index++) {
+      if(a[index]>b[index]){
+        aPoints++
+      } else if(b[index]>a[index]){
+        bPoints++
+      }
+  }
+  
+  return [aPoints,bPoints];
 }
 
 function main() {
   console.log('---------- Cool Programing ----------\n');
-  const testArray = [1, 2, 3, 4, 10, 11];
-  const result = simpleArraySum(testArray);
+  const a = [1, 2, 3]
+  const b = [3, 2, 1]
+  const result = compareTriplets(a, b);
   console.log('Result: ', result);
 }
 
