@@ -1,5 +1,5 @@
 # ------ Answer of excercie ------
-  https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true
+  https://www.hackerrank.com/challenges/plus-minus/problem?isFullScreen=true
 
 ## System requirements:
 - node 11 or superior
