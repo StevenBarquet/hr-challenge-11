@@ -1,38 +1,26 @@
 /* eslint-disable no-return-assign */
 
-// Source: https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true
+// Source: https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
 
-function birthdayCakeCandles(candles: number[]): number {
+function staircase(n: number): void {
   // Write your code here
-  function getMax(array: number[]): number {
-    let max = array[0];
-    array.forEach((element) => {
-      if (max < element) {
-        max = element;
-      }
-    });
-    return max;
+  for (let i = n; i > 0; i--) {
+    let hash = '';
+    let spaces = '';
+    for (let j = i - 1; j < n; j++) {
+      hash += '#';
+    }
+    for (let j = i - 2; j >= 0; j--) {
+      spaces += ' ';
+    }
+    console.log(spaces + hash);
   }
-
-  function countMax(array: number[], maxNum: number) {
-    let count = 0;
-    array.forEach((element) => {
-      if (element === maxNum) {
-        count++;
-      }
-    });
-    return count;
-  }
-
-  const maxTall = getMax(candles);
-
-  return countMax(candles, maxTall);
 }
 
 function main() {
   console.log('---------- Cool Programing ----------\n');
-  const a = [3, 2, 1, 3];
-  const result = birthdayCakeCandles(a);
+  const a = 4;
+  const result = staircase(a);
   console.log('Result: ', result);
 }
 
