@@ -1,35 +1,53 @@
 /* eslint-disable no-return-assign */
 
-// Source: https://www.hackerrank.com/challenges/plus-minus/problem?isFullScreen=true
+// Source: https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true
 
-function plusMinus(arr: number[]): void {
+function miniMaxSum(arr: number[]): void {
   // Write your code here
-  const { length } = arr
-  let positives = 0;
-  let negative = 0;
-  let neutrals = 0;
-
-  for (let i = 0; i < length; i++) {
-    const element = arr[i];
-    if( element > 0){
-      positives++
-    } else if( element < 0 ){
-      negative++
-    } else {
-      neutrals++
-    }
+  function getMax(array: number[]): number {
+    let max = array[0];
+    array.forEach((element) => {
+      if (max < element) {
+        max = element;
+      }
+    });
+    return max;
+  }
+  function getMin(array: number[]): number {
+    let min = array[0];
+    array.forEach((element) => {
+      if (element < min) {
+        min = element;
+      }
+    });
+    return min;
+  }
+  function getSumAndSkip(array: number[], skip: number): number {
+    let sum = 0;
+    let skipped = false;
+    array.forEach((element) => {
+      if (element !== skip || skipped) {
+        sum += element;
+      }
+      if (skip === element) {
+        skipped = true;
+      }
+    });
+    return sum;
   }
 
-  console.log('Positives: ', positives/length);
-  console.log('Negative: ', negative/length);
-  console.log('Neutrals: ', neutrals/length);
-  
+  const mayorNum = getMax(arr);
+  const minNum = getMin(arr);
+  const mayorSum = getSumAndSkip(arr, mayorNum);
+  const menorSum = getSumAndSkip(arr, minNum);
+  console.log(mayorSum, menorSum);
+  // console.log('menorSum: ', menorSum);
 }
 
 function main() {
   console.log('---------- Cool Programing ----------\n');
-  const a = [-4, 3, -9, 0, 4, 1]
-  const result = plusMinus(a);
+  const a = [1, 2, 3, 4, 5];
+  const result = miniMaxSum(a);
   console.log('Result: ', result);
 }
 
