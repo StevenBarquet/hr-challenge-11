@@ -1,5 +1,5 @@
 # ------ Answer of excercie ------
-  https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true
+  https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true
 
 ## System requirements:
 - node 11 or superior

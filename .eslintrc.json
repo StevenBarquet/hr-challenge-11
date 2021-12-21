@@ -24,6 +24,7 @@
         "no-console": "off",
         "no-unused-vars": 0,
         "comma-dangle": ["warn", "never"],
+        "no-plusplus": "off",
         "no-use-before-define": ["error", { "functions": false, "classes": true, "variables": true }],
         // Typescript
         "import/extensions": [ "error", "ignorePackages", { "ts": "never" }],

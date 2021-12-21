@@ -1,8 +1,8 @@
 /* eslint-disable no-return-assign */
 
-// Source: https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true
+// Source: https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true
 
-function miniMaxSum(arr: number[]): void {
+function birthdayCakeCandles(candles: number[]): number {
   // Write your code here
   function getMax(array: number[]): number {
     let max = array[0];
@@ -13,41 +13,26 @@ function miniMaxSum(arr: number[]): void {
     });
     return max;
   }
-  function getMin(array: number[]): number {
-    let min = array[0];
+
+  function countMax(array: number[], maxNum: number) {
+    let count = 0;
     array.forEach((element) => {
-      if (element < min) {
-        min = element;
+      if (element === maxNum) {
+        count++;
       }
     });
-    return min;
-  }
-  function getSumAndSkip(array: number[], skip: number): number {
-    let sum = 0;
-    let skipped = false;
-    array.forEach((element) => {
-      if (element !== skip || skipped) {
-        sum += element;
-      }
-      if (skip === element) {
-        skipped = true;
-      }
-    });
-    return sum;
+    return count;
   }
 
-  const mayorNum = getMax(arr);
-  const minNum = getMin(arr);
-  const mayorSum = getSumAndSkip(arr, mayorNum);
-  const menorSum = getSumAndSkip(arr, minNum);
-  console.log(mayorSum, menorSum);
-  // console.log('menorSum: ', menorSum);
+  const maxTall = getMax(candles);
+
+  return countMax(candles, maxTall);
 }
 
 function main() {
   console.log('---------- Cool Programing ----------\n');
-  const a = [1, 2, 3, 4, 5];
-  const result = miniMaxSum(a);
+  const a = [3, 2, 1, 3];
+  const result = birthdayCakeCandles(a);
   console.log('Result: ', result);
 }
 
