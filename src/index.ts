@@ -1,34 +1,27 @@
 /* eslint-disable no-return-assign */
 
-// Source: https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
+// Source: https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true
 
-function timeConversion(s: string): string {
+function gradingStudents(grades: number[]): number[] {
   // Write your code here
-  const hourTypeStarts = s.length - 2;
-  const fullMinutes = s.substring(2, hourTypeStarts);
-  const hourType = s.substring(hourTypeStarts, s.length);
-  const justHour = s.substring(0, 2);
 
-  let militarHour = '';
-
-  if (justHour !== '12' && hourType === 'AM') {
-    militarHour = justHour + fullMinutes;
-  } else if (justHour !== '12' && hourType === 'PM') {
-    const newHour = parseInt(justHour, 10) + 12;
-    militarHour = newHour + fullMinutes;
-  } else if (justHour === '12' && hourType === 'AM') {
-    const newHour = '00';
-    militarHour = newHour + fullMinutes;
-  } else if (justHour === '12' && hourType === 'PM') {
-    militarHour = justHour + fullMinutes;
+  function toRound(grade: number): number {
+    const next5 = 5 - (grade % 5);
+    const willRound = grade >= 38 && next5 < 3;
+    if (willRound) {
+      return grade + next5;
+    }
+    return grade;
   }
-  return militarHour;
+  const fixedGrades = grades.map((element) => toRound(element));
+
+  return fixedGrades;
 }
 
 function main() {
   console.log('---------- Cool Programing ----------\n');
-  const a = '07:05:45PM';
-  const result = timeConversion(a);
+  const a = [73, 67, 45, 33];
+  const result = gradingStudents(a);
   console.log('Result: ', result);
 }
 
