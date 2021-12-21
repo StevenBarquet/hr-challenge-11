@@ -1,5 +1,5 @@
 # ------ Answer of excercie ------
-  https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
+  https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
 
 ## System requirements:
 - node 11 or superior
