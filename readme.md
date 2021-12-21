@@ -1,5 +1,5 @@
 # ------ Answer of excercie ------
-  https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true
+  https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true
 
 ## System requirements:
 - node 11 or superior
